@@ -1,5 +1,6 @@
 
 export interface repoUser{
+    consultarEmail(email: string): Promise<boolean>
     cadastrar(input: Input): Promise<void>
 }
 
