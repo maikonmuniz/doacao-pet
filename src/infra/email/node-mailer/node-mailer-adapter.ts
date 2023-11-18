@@ -18,11 +18,14 @@ export class Email implements EnvioEmailContratoProvider {
             html: `<h1>${this.mensagem}</h1>`
         };
 
-        transporte.sendMail(opcoesEmail, function (error, info) {
-            if (error) {
-                return false
-            }
-            return true
+        return new Promise((resolve, reject) => {
+            transporte.sendMail(opcoesEmail, (erro, info) => {
+                if (erro) {
+                    reject(false);
+                } else {
+                    resolve(true);
+                }
+            });
         });
     }
 }
