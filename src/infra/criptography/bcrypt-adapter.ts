@@ -8,5 +8,5 @@ export class BcryptAdapter{
 
     async comparaHash (senha, hashVlr): Promise<boolean> {
         return compare(senha, hashVlr)
-    } 
+    }
 }
