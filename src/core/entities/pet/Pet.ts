@@ -1,25 +1,18 @@
 
 export class Pet {
+    doado: boolean;
 
-    constructor(readonly props: Dados) { }
+    constructor(readonly nome, readonly raca,  readonly idade, private castrado, readonly cor) {
+        this.doado = false;
+     }
 
     doar() {
-        if (this.props.doado) throw new Error('Já doado')
-        this.props.doado = true;
+        if (this.doado) throw new Error('Já doado')
+        this.doado = true;
     }
 
     castrar() {
-        if (this.props.castrado) throw new Error('Já castrado')
-        this.props.castrado = true;
+        if (this.castrado) throw new Error('Já castrado')
+        this.castrado = true;
     }
-}
-
-type Dados = {
-    nome: string,
-    idade?: number,
-    raca?: string,
-    cor: string,
-    tamanho: string,
-    doado: boolean,
-    castrado: boolean
 }
