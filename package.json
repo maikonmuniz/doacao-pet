@@ -21,11 +21,13 @@
   "dependencies": {
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.9",
+    "@types/sinon": "^17.0.2",
     "bcrypt": "^5.1.1",
     "express": "^4.18.2",
     "jest": "^29.7.0",
     "mysql2": "^3.6.3",
     "nodemailer": "^6.9.7",
+    "sinon": "^17.0.1",
     "ts-jest": "^29.1.1",
     "tsx": "^4.1.2"
   }
