@@ -27,3 +27,16 @@ test("Deve verificar se idade é maior que 18", async function () {
     const verificacaoIdade = user.verificarIdadeValida()
     expect(true).toBe(verificacaoIdade)
 });
+
+test("Deve verificar se idade é menor que 18", async function () {
+    const userObj = {
+        nome: "any",
+        email: "any@any",
+        senha: "password",
+        cpf: "3212342342",
+        idade: 15,
+    }
+    const user = new User(userObj)
+    const verificacaoIdade = user.verificarIdadeValida()
+    expect(false).toBe(verificacaoIdade)
+});
