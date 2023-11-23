@@ -1,7 +1,7 @@
 import { repoUser } from '../../../core/repository/user/repository-user'
 import { HashBcrypt } from '../../../shared/application/provider/bcrypt/hashBcrypt'
 
-export class cadastrarUser {
+export class CadastrarUser {
     repo: repoUser
     hashBcrypt: HashBcrypt
 
@@ -11,9 +11,9 @@ export class cadastrarUser {
     }
 
     async execute(input: Input){
-        const verificacaoEmail = await this.repo.consultarEmail(input.email)
+        const verificacaoEmailExiste = await this.repo.consultarEmail(input.email)
 
-        if (verificacaoEmail) {
+        if (verificacaoEmailExiste) {
             throw new Error("Usuário já cadastrado")            
         }
         const senha = await this.hashBcrypt.gerar(input.senha)
