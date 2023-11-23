@@ -1,7 +1,7 @@
 import mysql from 'mysql2'
 import { DatabaseConnection } from '../contracts/DatabaseConnection';
 
-export default class MySQLAdapter implements DatabaseConnection {
+export class MySQLAdapter implements DatabaseConnection {
 	connection: any;
 
 	constructor () {
