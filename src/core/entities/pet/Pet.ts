@@ -2,17 +2,6 @@
 export class Pet {
     doado: boolean;
 
-    constructor(readonly nome, readonly raca,  readonly idade, private castrado, readonly cor) {
-        this.doado = false;
+    constructor(readonly nome, readonly raca,  readonly idade, readonly castrado, readonly cor) {
      }
-
-    doar() {
-        if (this.doado) throw new Error('Já doado')
-        this.doado = true;
-    }
-
-    castrar() {
-        if (this.castrado) throw new Error('Já castrado')
-        this.castrado = true;
-    }
 }
